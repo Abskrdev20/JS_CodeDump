@@ -28,8 +28,3 @@ console.log(typeof 33);
 */ 
 console.log(typeof showWeather);
 console.log(typeof undefined);
-
-
-
-
-
