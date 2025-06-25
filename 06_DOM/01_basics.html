@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM LEARNING SERIES</title>
+    <style>
+        .bg-black{
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div >
+        <h1 id="heading" class="test">Dom tutorial heading <span style="display: none;">test text</span>
+        </h1>
+        <h2 class="list-item">lorem ipsum andjhhdsa</h2>
+        <h2 class="list-item">lorem ipsum andjhhdsa</h2>
+        <h2 class="list-item">lorem ipsum andjhhdsa</h2>
+        <h2 class="list-item">lorem ipsum andjhhdsa</h2>
+        <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+        </ul>
+    </div>
+</body>
+
+<script>
+// DOM : document object model
+// -----------------------------------------
+    console.log("\n");
+    console.log(`\nBasic Objects in Js for DOM\n`);
+
+    console.log(window);
+    console.log(document);
+    console.dir(document);
+// -------------------------------------
+    console.log("\n");
+    console.log(`\nCertain Document Obj Properties\n`);
+
+    console.log(document.baseURI);
+    console.log(document.links);
+    console.log(document.links[0]);
+// --------------------------------------
+    console.log("\n");
+    console.log(`\nElement selection by getElement\n`);
+
+    console.log(document.getElementById("heading"))
+    console.log(document.getElementsByClassName("test"));
+// --------------------------------------------
+    console.log("\n");
+    console.log(`\nGetting Selected ele attributes\n`);
+
+    console.log(document.getElementById("heading").id)
+    console.log(document.getElementById("heading").class)
+    console.log(document.getElementById("heading").className)
+
+    console.log(document.getElementById("heading").getAttribute("id"))
+    console.log(document.getElementById("heading").getAttribute("className"))
+
+    console.log(document.getElementById("heading").setAttribute("className","myclass"))
+    console.log(document.getElementsByClassName("myclass"));
+// -----------------------------------------
+    console.log("\n");
+    console.log(`\nElement Manipulation\n`);
+    const title = document.getElementById("heading")
+    console.log(title);
+
+    title.style.backgroundColor = "salmon"
+    title.style.color = "purple"
+    title.style.textAlign = "center"
+    title.style.borderRadius = "25px"
+    title.style.padding = "10px"
+// ----------------------------------------
+    console.log("\n");
+    console.log(`\nAccessing Element Content\n`);
+
+    console.log(title.innerText);
+    // display the content only and gets affected on styling prop like display : none
+    console.log(title.textContent);
+    //  display the complete content irrespective of styling
+    console.log(title.innerHTML);
+    // display whatsoever between the selected text
+    // console.log(title.outerHTML);
+    // display everything outside the tag selected
+// -------------------------------------------
+    console.log("\n");
+    console.log(`\nSelecting Element using .querySelector("css_selector")\n`);
+
+    console.log(document.querySelector("h2"));
+    //selects the FIRST element with h2 tag
+    console.log(document.querySelectorAll("h2"));
+    // selects All elements with h2 tag in NODE_LIST form
+    console.log(document.querySelector("#heading"));
+    // select the element with id "heading"
+    console.log(document.querySelector(".test"));
+    // selects the element with className "test"
+    console.log(document.querySelector("ul :first-child"));
+    // selects the first child of ul tag
+// -----------------------------------------
+    console.log("\n");
+    console.log(`\nPlay with NODELIST \n`)
+
+    const tempList = document.querySelectorAll("li")
+    console.log(tempList);
+    // gives nodelist diff from array not have map , filter methods
+
+    tempList[2].style.backgroundColor = "coral"
+    tempList[2].style.width = "50px"
+    tempList[2].style.textAlign = "center"
+    tempList[2].style.padding = "10px"
+    tempList[2].style.borderRadius = "15px"
+
+    tempList.forEach( (l) => {
+        l.style.color = "pink"
+    })
+// --------------------------------------------
+    console.log("\n");
+    console.log(`\nPlay with HTML COLLECTIONS\n`)
+
+    const tempClassLi = document.getElementsByClassName("list-item")
+    console.log(tempClassLi);
+    
+    const cnvtdArr = Array.from(tempClassLi)
+    console.log(cnvtdArr);
+    
+    cnvtdArr.forEach( function (li) {
+    li.style.color = "red";
+    li.style.backgroundColor = "yellow"
+})
+
+
+</script>
+</html>
