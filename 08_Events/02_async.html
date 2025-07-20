@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async API</title>
+</head>
+<body>
+    <h1>Async Tasks Tutorial hubspot</h1>
+    <button id="start">start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+        setTimeout(function(){
+            console.log('welcome to the codespace');
+        } , 2000 )
+
+        const user =  function(){console.log("rishab"); }
+        setTimeout(user,3000)
+
+        const changeText = document.querySelector('h1')
+        .innerHTML = "Javascript ultimate series"
+ 
+        documet.querySelector('#start')
+        .addEventListener('click',function() {
+            setTimeout(changeText,1000)     
+        })
+        
+
+        // clear the time out on occuring event
+        document.querySelector('#stop')
+        .addEventListener('click',function() {
+            clearTimeout(changeText)
+        })
+        // clearTimeout(changeText)\
+
+        
+    </script>
+</body>
+</html>
